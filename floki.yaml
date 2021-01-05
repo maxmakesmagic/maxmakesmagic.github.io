@@ -1,0 +1,9 @@
+image:
+  build:
+    name: jekyll
+shell: bash
+docker_switches:
+  - -p 4000:4000
+init:
+  - bundle install --jobs 4
+  - echo "alias serve='bundle exec jekyll serve --force_polling -H0.0.0.0 -P4000'" >> ~/.bashrc
